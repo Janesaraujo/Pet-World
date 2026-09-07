@@ -24,10 +24,10 @@
 }
 
 /* ==========================================================================
-   Schedule (main container)
+   Appointments (main container)
    ========================================================================== */
-.agenda {
-  width: min(100%, var(--agenda-max-width));
+.appointments {
+  width: min(100%, var(--appointments-max-width));
   margin: 0 auto;
   padding: 80px 80px 120px;
   display: flex;
@@ -35,14 +35,14 @@
   gap: var(--space-8);
 }
 
-.agenda__header {
+.appointments__header {
   display: flex;
   align-items: center;
   gap: var(--space-3);
   max-width: var(--content-max-width);
 }
 
-.agenda__title {
+.appointments__title {
   flex: 1 0 0;
   min-width: 0;
   display: flex;
@@ -50,7 +50,7 @@
   gap: var(--space-1);
 }
 
-.agenda__list {
+.appointments__list {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);

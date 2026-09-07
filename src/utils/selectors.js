@@ -3,8 +3,8 @@
  * Centralizing them here avoids repeating querySelector across files.
  */
 export const selectors = {
-  agendaDate: document.getElementById("agenda-date"),
-  agendaList: document.getElementById("agenda-list"),
+  appointmentsDate: document.getElementById("appointments-date"),
+  appointmentsList: document.getElementById("appointments-list"),
   periods: document.querySelectorAll(".period"),
   newButton: document.getElementById("btn-new-appointment"),
   dialog: document.getElementById("schedule-dialog"),

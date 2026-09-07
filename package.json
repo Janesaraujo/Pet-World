@@ -1,5 +1,5 @@
 {
-  "name": "pet-world-agenda",
+  "name": "pet-world",
   "version": "1.0.0",
   "private": true,
   "description": "Pet shop appointment scheduling — webpack + json-server",

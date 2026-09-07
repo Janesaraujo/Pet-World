@@ -12,7 +12,7 @@ export async function formOpen() {
   selectors.form.reset();
   formClearErrors();
 
-  const date = selectors.agendaDate.value || today();
+  const date = selectors.appointmentsDate.value || today();
   selectors.dateInput.value = date;
 
   selectors.dialog.showModal();

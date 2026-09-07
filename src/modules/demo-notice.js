@@ -14,5 +14,5 @@ export function demoNotice() {
   notice.textContent =
     "Demo version — appointments are only saved in this browser.";
 
-  selectors.agendaDate.closest(".agenda__header").after(notice);
+  selectors.appointmentsDate.closest(".appointments__header").after(notice);
 }

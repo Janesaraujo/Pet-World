@@ -46,7 +46,7 @@ export function formSubmit() {
       formClose();
 
       // If the appointment is for the day currently open, reload the schedule.
-      if (created.when === selectors.agendaDate.value) {
+      if (created.when === selectors.appointmentsDate.value) {
         schedulesDay();
       }
 

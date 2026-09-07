@@ -20,7 +20,7 @@ import { formSubmit } from "./form/submit.js";
  */
 export function pageLoad() {
   // Initial state
-  selectors.agendaDate.value = today();
+  selectors.appointmentsDate.value = today();
   demoNotice();
 
   // Schedule

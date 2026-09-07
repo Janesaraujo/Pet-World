@@ -9,9 +9,9 @@ import { today } from "../../utils/date.js";
  * and renders them on screen.
  */
 export async function schedulesDay() {
-  const date = selectors.agendaDate.value || today();
+  const date = selectors.appointmentsDate.value || today();
 
-  selectors.agendaList.setAttribute("aria-busy", "true");
+  selectors.appointmentsList.setAttribute("aria-busy", "true");
 
   try {
     const schedules = await scheduleDay({ date });
@@ -23,14 +23,14 @@ export async function schedulesDay() {
       { type: "error", duration: 5000 }
     );
   } finally {
-    selectors.agendaList.removeAttribute("aria-busy");
+    selectors.appointmentsList.removeAttribute("aria-busy");
   }
 }
 
 /** Changing the date at the top reloads that day's schedule. */
 export function schedulesDateChange() {
-  selectors.agendaDate.addEventListener("change", () => {
-    if (selectors.agendaDate.value) {
+  selectors.appointmentsDate.addEventListener("change", () => {
+    if (selectors.appointmentsDate.value) {
       schedulesDay();
     }
   });

@@ -47,7 +47,7 @@ function createEmptyItem() {
  */
 export function schedulesShow({ schedules }) {
   PERIODS.forEach((period) => {
-    const list = selectors.agendaList.querySelector(
+    const list = selectors.appointmentsList.querySelector(
       `[data-period="${period.id}"] .period__items`
     );
 

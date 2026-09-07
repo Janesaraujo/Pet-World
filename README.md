@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Janesaraujo/pet-world-agenda">
+  <a href="https://github.com/Janesaraujo/Pet-World">
     <img src="https://img.shields.io/badge/repository-github-181717.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
   </a>
   <a href="YOUR_VERCEL_URL">
@@ -109,7 +109,7 @@ The date and time work followed the same logic on a smaller scale: rather than p
 
 The interface follows a Figma proposal ("Pet Shop Scheduling") provided as part of the course — layout, typography, colors, appointment cards, and the scheduling form all come from that design.
 
-<!-- TODO: add the Figma community link here if you have one to share publicly. -->
+---
 
 ## 🧠 What I practiced
 
@@ -125,6 +125,8 @@ The interface follows a Figma proposal ("Pet Shop Scheduling") provided as part 
 - **The native `<dialog>` element**, for modal focus-handling and Escape/backdrop closing without hand-rolling either.
 - **Debugging a genuinely subtle bug** — an input mask that corrupted its own output — by testing actual keystroke sequences instead of just finished values.
 
+---
+
 ## 🛠️ Technologies
 
 - **JavaScript (ES Modules)**
@@ -138,6 +140,8 @@ The interface follows a Figma proposal ("Pet Shop Scheduling") provided as part 
 - **Figma** — source of the visual design
 - **Vercel** — deployment target for the static, `localStorage`-backed build
 
+---
+
 ## 🚀 Getting Started
 
 Requires **Node.js 20+**.
@@ -145,8 +149,8 @@ Requires **Node.js 20+**.
 ### Clone the repository
 
 ```bash
-git clone https://github.com/Janesaraujo/pet-world-agenda.git
-cd pet-world-agenda
+git clone https://github.com/Janesaraujo/Pet-World.git
+cd Pet-World
 ```
 
 ### Install and run
@@ -167,9 +171,10 @@ To see the original sample data, change the date at the top to **01/10/2024**.
 | `npm run api`   | Just json-server                                                    |
 | `npm run build` | Production build into `dist/` (the `localStorage`-backed demo mode) |
 
+---
+
 ## 👀 Preview
 
-<!-- TODO: add real screenshots/GIFs to the paths below once available. -->
 
 ### Desktop
 
@@ -178,15 +183,8 @@ To see the original sample data, change the date at the top to **01/10/2024**.
 
 ### Mobile
 
-![Pet World mobile preview](assets/mobile-preview.png)
+![Pet World mobile preview](src/assets/mobile-preview.png)
 
-### Live Preview
-
-<p align="center">
-  <a href="YOUR_VERCEL_URL">
-    🔗 <strong>Live Preview →</strong>
-  </a>
-</p>
 
 ## 👤 Author
 
