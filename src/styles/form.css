@@ -1,0 +1,364 @@
+/* ==========================================================================
+   Form fields (text field / text area / date / select)
+   ========================================================================== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.field__label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration-fast) ease;
+}
+
+.field__control:focus-within {
+  border-color: var(--content-brand);
+}
+
+.field__input {
+  flex: 1 0 0;
+  min-width: 0;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--content-primary);
+  outline: none;
+}
+
+.field__input::placeholder {
+  color: var(--content-secondary);
+  opacity: 1;
+}
+
+/* Text area */
+.field--textarea .field__control {
+  height: 83px;
+  align-items: flex-start;
+}
+
+.field--textarea .field__input {
+  height: 100%;
+  resize: none;
+}
+
+/* Date: hides the native icon and makes the whole control open the calendar */
+.field--date .field__control {
+  cursor: pointer;
+}
+
+.field--date .field__input {
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--content-secondary); /* matches Figma */
+}
+
+.field--date .field__input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Select */
+.field--select .field__input {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.field--select .field__input:invalid {
+  color: var(--content-secondary);
+}
+
+.field--select option,
+.field--select optgroup {
+  background: var(--bg-tertiary);
+  color: var(--content-primary);
+}
+
+.field__chevron {
+  pointer-events: none;
+}
+
+/* Compact (used in the date picker at the top) */
+.field--compact {
+  width: 190px;
+}
+
+/* Error state */
+.field__error {
+  display: none;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--feedback-danger);
+}
+
+.field--invalid .field__control {
+  border-color: var(--feedback-danger);
+}
+
+.field--invalid .field__error {
+  display: block;
+}
+
+/* ==========================================================================
+   "Schedule an appointment" modal
+   ========================================================================== */
+.dialog {
+  width: min(var(--modal-width), calc(100% - 40px));
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: var(--bg-tertiary);
+  color: var(--content-primary);
+  overflow: auto;
+}
+
+.dialog::backdrop {
+  background: rgba(20, 21, 29, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.dialog[open] {
+  animation: dialog-in var(--duration-base) var(--ease-out);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.dialog__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background var(--duration-fast) ease;
+}
+
+.dialog__close:hover {
+  background: var(--bg-secondary);
+}
+
+.schedule {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-7);
+  padding: var(--space-10);
+}
+
+.schedule__title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.schedule__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.schedule__row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.schedule__row > .field {
+  flex: 1 0 0;
+}
+
+/* The modal's button doesn't have the main CTA's glow (matches Figma) */
+.schedule .btn--primary {
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   Time slot list (Time field)
+   ========================================================================== */
+.field__label--icon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.hours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.hour-period {
+  width: 100%;
+  margin-top: var(--space-2);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--content-secondary);
+}
+
+.hour-period:first-child {
+  margin-top: 0;
+}
+
+.hour {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  transition:
+    border-color var(--duration-fast) ease,
+    background var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.hour-available {
+  cursor: pointer;
+}
+
+.hour-available:hover {
+  border-color: var(--content-brand);
+}
+
+.hour-unavailable {
+  color: var(--content-tertiary);
+  border-color: var(--border-divider);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.hour-selected {
+  background: var(--content-brand);
+  border-color: var(--content-brand);
+  color: var(--content-on-brand);
+}
+
+/* The Time field has no .field__control, so the error state
+   needs to paint the border on the available time slots directly. */
+.field--invalid .hour-available {
+  border-color: var(--feedback-danger);
+}
+
+/* ==========================================================================
+   Phone field: country picker + local number
+   ========================================================================== */
+.phone-field {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.phone-field__country {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.phone-field__country-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.phone-field__country-button:hover,
+.phone-field__country-button[aria-expanded="true"] {
+  border-color: var(--content-brand);
+}
+
+.phone-field__list {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  z-index: 30;
+  width: 240px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.phone-field__list[hidden] {
+  display: none;
+}
+
+.phone-field__option {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.phone-field__option:hover {
+  background: var(--bg-secondary);
+  color: var(--content-brand);
+}
+
+.phone-field__other-dial {
+  width: 64px;
+  flex-shrink: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.phone-field__other-dial[hidden] {
+  display: none;
+}
+
+.phone-field__number {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.field--invalid .phone-field__country-button,
+.field--invalid .phone-field__other-dial {
+  border-color: var(--feedback-danger);
+}

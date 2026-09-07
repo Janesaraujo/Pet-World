@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Pet World · Your Schedule</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@700&family=Inter+Tight:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="brand">
+    <img src="./src/assets/dog.svg" alt="" width="20" height="20">
+    <span class="brand__name">Pet World</span>
+  </div>
+
+  <main class="agenda" id="agenda">
+    <header class="agenda__header">
+      <div class="agenda__title">
+        <h1 class="text-title">Your schedule</h1>
+        <p class="text-paragraph-md">Here you can see every client and service scheduled for today.</p>
+      </div>
+
+      <div class="field field--date field--compact">
+        <label class="visually-hidden" for="agenda-date">Schedule date</label>
+        <div class="field__control">
+          <img src="./src/assets/calendar.svg" alt="" width="20" height="20">
+          <input class="field__input" type="date" id="agenda-date" name="agenda-date">
+          <img class="field__chevron" src="./src/assets/chevron-down.svg" alt="" width="20" height="20">
+        </div>
+      </div>
+    </header>
+
+    <div class="agenda__list" id="agenda-list">
+      <section class="period" data-period="morning" aria-labelledby="period-morning">
+        <header class="period__header">
+          <img src="./src/assets/sun-fog.svg" alt="" width="20" height="20">
+          <h2 class="period__name text-label-lg" id="period-morning">Morning</h2>
+          <span class="period__range text-label-lg">9 AM–12 PM</span>
+        </header>
+        <ul class="period__items" aria-live="polite"></ul>
+      </section>
+
+      <section class="period" data-period="afternoon" aria-labelledby="period-afternoon">
+        <header class="period__header">
+          <img src="./src/assets/cloud-sun.svg" alt="" width="20" height="20">
+          <h2 class="period__name text-label-lg" id="period-afternoon">Afternoon</h2>
+          <span class="period__range text-label-lg">1 PM–6 PM</span>
+        </header>
+        <ul class="period__items" aria-live="polite"></ul>
+      </section>
+
+      <section class="period" data-period="evening" aria-labelledby="period-evening">
+        <header class="period__header">
+          <img src="./src/assets/moon-stars.svg" alt="" width="20" height="20">
+          <h2 class="period__name text-label-lg" id="period-evening">Evening</h2>
+          <span class="period__range text-label-lg">7 PM–9 PM</span>
+        </header>
+        <ul class="period__items" aria-live="polite"></ul>
+      </section>
+    </div>
+  </main>
+
+  <div class="cta-bar">
+    <button type="button" class="btn btn--primary" id="btn-new-appointment">New appointment</button>
+  </div>
+
+  <!-- "Schedule an appointment" modal -->
+  <dialog class="dialog" id="schedule-dialog" aria-labelledby="schedule-title">
+    <form class="schedule" id="schedule-form" novalidate>
+      <button type="button" class="dialog__close" id="btn-close-dialog" aria-label="Close">
+        <img src="./src/assets/close.svg" alt="" width="36" height="36">
+      </button>
+
+      <div class="schedule__title">
+        <h2 class="text-title" id="schedule-title">Schedule an appointment</h2>
+        <p class="text-paragraph-md">Fill in the client's details to schedule the appointment:</p>
+      </div>
+
+      <div class="schedule__form">
+        <div class="field" data-field="tutor">
+          <label class="field__label" for="tutor">Owner's name</label>
+          <div class="field__control">
+            <img src="./src/assets/user.svg" alt="" width="20" height="20">
+            <input class="field__input" id="tutor" name="tutor" type="text" placeholder="Emily Carter" autocomplete="name" aria-describedby="tutor-error">
+          </div>
+          <p class="field__error" id="tutor-error"></p>
+        </div>
+
+        <div class="field" data-field="pet">
+          <label class="field__label" for="pet">Pet's name</label>
+          <div class="field__control">
+            <img src="./src/assets/paw.svg" alt="" width="20" height="20">
+            <input class="field__input" id="pet" name="pet" type="text" placeholder="Cheddar" autocomplete="off" aria-describedby="pet-error">
+          </div>
+          <p class="field__error" id="pet-error"></p>
+        </div>
+
+        <div class="field" data-field="phone">
+          <label class="field__label" for="phone-number">Phone</label>
+          <div class="phone-field">
+            <div class="phone-field__country">
+              <button type="button" class="phone-field__country-button" id="phone-country-button" aria-haspopup="listbox" aria-expanded="false" aria-controls="phone-country-list">
+                <span id="phone-country-dial">+1</span>
+                <img class="field__chevron" src="./src/assets/chevron-down.svg" alt="" width="16" height="16">
+              </button>
+              <ul class="phone-field__list" id="phone-country-list" role="listbox" aria-label="Country" hidden></ul>
+            </div>
+            <input class="phone-field__other-dial" id="phone-other-dial" type="text" inputmode="numeric" maxlength="4" placeholder="+00" aria-label="Country dial code" hidden>
+            <div class="field__control phone-field__number">
+              <img src="./src/assets/phone.svg" alt="" width="20" height="20">
+              <input class="field__input" id="phone-number" type="tel" inputmode="numeric" placeholder="987 478 562" aria-describedby="phone-error">
+            </div>
+          </div>
+          <input type="hidden" id="phone" name="phone">
+          <p class="field__error" id="phone-error"></p>
+        </div>
+
+        <div class="field field--textarea" data-field="service">
+          <label class="field__label" for="service">Service description</label>
+          <div class="field__control">
+            <textarea class="field__input" id="service" name="service" placeholder="Bath and grooming" rows="2" aria-describedby="service-error"></textarea>
+          </div>
+          <p class="field__error" id="service-error"></p>
+        </div>
+
+        <div class="field field--date" data-field="date">
+          <label class="field__label" for="date">Date</label>
+          <div class="field__control">
+            <img src="./src/assets/calendar.svg" alt="" width="20" height="20">
+            <input class="field__input" id="date" name="date" type="date" aria-describedby="date-error">
+            <img class="field__chevron" src="./src/assets/chevron-down.svg" alt="" width="20" height="20">
+          </div>
+          <p class="field__error" id="date-error"></p>
+        </div>
+
+        <div class="field" data-field="hour">
+          <div class="field__label field__label--icon">
+            <img src="./src/assets/clock.svg" alt="" width="20" height="20">
+            <span id="hours-label">Time</span>
+          </div>
+          <input type="hidden" id="hour" name="hour">
+          <ul class="hours" id="hours" aria-labelledby="hours-label"></ul>
+          <p class="field__error" id="hour-error"></p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn--primary" id="btn-submit">Schedule</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <template id="appointment-template">
+    <li class="appointment">
+      <time class="appointment__time"></time>
+      <p class="appointment__client">
+        <strong class="appointment__pet"></strong>
+        <span class="appointment__tutor"></span>
+      </p>
+      <p class="appointment__service"></p>
+      <button type="button" class="cancel-icon">Remove appointment</button>
+    </li>
+  </template>
+
+</body>
+</html>

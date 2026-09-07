@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Mobile (390px frame from Figma)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .agenda {
+    padding: 69px var(--space-5) 110px;
+  }
+
+  .agenda__header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .field--compact {
+    width: 183px;
+  }
+
+  /* Row becomes a stacked ~96px card */
+  .appointment {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "time remove"
+      "client client"
+      "service service";
+    row-gap: var(--space-1);
+    height: auto;
+    min-height: 96px;
+    padding: var(--space-3);
+    align-content: center;
+  }
+
+  .appointment__time    { grid-area: time; font-size: 0.875rem; line-height: 1.5rem; font-weight: 700; white-space: nowrap; }
+  .cancel-icon  { grid-area: remove; }
+  .appointment__client  { grid-area: client; white-space: normal; }
+  .appointment__service { grid-area: service; white-space: normal; }
+
+  /* CTA becomes a fixed bar at the bottom */
+  .cta-bar {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 18px var(--space-5) max(18px, env(safe-area-inset-bottom));
+    background: linear-gradient(to top, var(--bg-primary) 60%, transparent);
+  }
+
+  /* Modal takes the full width with a 20px margin */
+  .dialog {
+    width: calc(100% - 40px);
+    max-height: calc(100dvh - 32px);
+  }
+
+  .schedule {
+    padding: var(--space-10) var(--space-5);
+  }
+
+  .schedule__row {
+    flex-direction: column;
+  }
+}
+
+/* Very short desktop screens: keeps the CTA from covering the last section */
+@media (min-width: 768px) and (max-height: 700px) {
+  .agenda {
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hours {
+    max-height: 180px;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Design tokens — extracted from the Figma "Pet Shop Scheduling" file
+   ========================================================================== */
+:root {
+  /* Background */
+  --bg-primary: #14151d;
+  --bg-secondary: #2e2c30;
+  --bg-tertiary: #23242c;
+
+  /* Border */
+  --border-primary: #3e3c41;
+  --border-divider: #2e2c30;
+  --border-row: #353339;
+
+  /* Content */
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+  --content-brand: #9282fa;
+  --content-on-brand: #050505;
+
+  /* Feedback (not in the Figma file — added for validation) */
+  --feedback-danger: #f8717a;
+  --feedback-success: #7ee2a8;
+
+  /* Effects */
+  --shadow-brand: 0 0 40px 0 rgba(146, 130, 250, 0.3);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+
+  /* Typography */
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-logo: "Familjen Grotesk", "Inter Tight", sans-serif;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Layout */
+  --agenda-max-width: 871px;
+  --content-max-width: 920px;
+  --modal-width: 477px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
+}

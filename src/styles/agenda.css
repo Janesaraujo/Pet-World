@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Brand (top-left corner)
+   ========================================================================== */
+.brand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-secondary);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.brand__name {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: var(--content-brand);
+}
+
+/* ==========================================================================
+   Schedule (main container)
+   ========================================================================== */
+.agenda {
+  width: min(100%, var(--agenda-max-width));
+  margin: 0 auto;
+  padding: 80px 80px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.agenda__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: var(--content-max-width);
+}
+
+.agenda__title {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.agenda__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--content-max-width);
+}
+
+/* --------------------------------------------------------------------------
+   Period card (Morning / Afternoon / Evening)
+   -------------------------------------------------------------------------- */
+.period {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.period__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--border-divider);
+}
+
+.period__name {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.period__range {
+  color: var(--content-secondary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.period__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.period__empty {
+  padding: var(--space-3);
+  color: var(--content-tertiary);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Appointment row
+   -------------------------------------------------------------------------- */
+.appointment {
+  display: grid;
+  /* First column is wide enough for the longest locale-formatted time
+     (e.g. "02:30 PM"), not just the original 24h "09:00" — see
+     .appointment__time below. */
+  grid-template-columns: 72px 195px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-4);
+  height: 48px;
+  padding: 0 var(--space-3);
+  border-bottom: 0.6px solid var(--border-row);
+  animation: appointment-in var(--duration-base) var(--ease-out);
+}
+
+.appointment:last-child {
+  border-bottom: 0;
+}
+
+.appointment__time {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  white-space: nowrap;
+}
+
+.appointment__client {
+  display: flex;
+  gap: var(--space-1);
+  min-width: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.appointment__pet {
+  font-weight: 600;
+}
+
+.appointment__tutor {
+  font-weight: 400;
+  color: var(--content-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.appointment__tutor::before {
+  content: "/ ";
+}
+
+.appointment__service {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--content-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cancel-icon {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--content-tertiary);
+  white-space: nowrap;
+  transition: color var(--duration-fast) ease;
+}
+
+.cancel-icon:hover {
+  color: var(--feedback-danger);
+}
+
+.appointment.is-removing {
+  opacity: 0;
+  transform: translateX(8px);
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+@keyframes appointment-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   "New appointment" CTA bar
+   -------------------------------------------------------------------------- */
+.cta-bar {
+  position: fixed;
+  right: 30px;
+  bottom: 32px;
+  z-index: 15;
+}
+
+/* Notice for the published version (demo mode) */
+.demo-notice {
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--content-secondary);
+}

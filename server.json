@@ -1,0 +1,122 @@
+{
+  "schedules": [
+    {
+      "id": "a1",
+      "tutor": "Jennifer Carter",
+      "pet": "Thor",
+      "phone": "+1 (415) 555-0132",
+      "service": "Vaccination",
+      "when": "2024-01-10",
+      "hour": "09:00"
+    },
+    {
+      "id": "a2",
+      "tutor": "John Miller",
+      "pet": "Mel",
+      "phone": "+1 (312) 555-0198",
+      "service": "Nail Trim",
+      "when": "2024-01-10",
+      "hour": "13:00"
+    },
+    {
+      "id": "a3",
+      "tutor": "Peter Martin",
+      "pet": "Bella",
+      "phone": "+1 (646) 555-0176",
+      "service": "Flea Treatment",
+      "when": "2024-01-10",
+      "hour": "14:00"
+    },
+    {
+      "id": "a4",
+      "tutor": "Julia Rhodes",
+      "pet": "Simba",
+      "phone": "+1 (713) 555-0143",
+      "service": "Hygienic Trim",
+      "when": "2024-01-10",
+      "hour": "15:00"
+    },
+    {
+      "id": "a5",
+      "tutor": "Camila Reyes",
+      "pet": "Max",
+      "phone": "+1 (206) 555-0147",
+      "service": "Teeth Cleaning",
+      "when": "2024-01-10",
+      "hour": "20:00"
+    },
+    {
+      "tutor": "cleber de souza",
+      "pet": "bilu",
+      "phone": "(75) 9 9944-6462",
+      "service": "banho e tosa",
+      "when": "2026-08-26",
+      "hour": "14:00",
+      "id": "8aLNPfhDEGY"
+    },
+    {
+      "tutor": "cleber de sousa",
+      "pet": "biulu",
+      "phone": "(75) 9 9955-6555",
+      "service": "vacinacao",
+      "when": "2026-08-26",
+      "hour": "20:00",
+      "id": "p321cM2507U"
+    },
+    {
+      "tutor": "John Smith",
+      "pet": "Buddy",
+      "phone": "+1 (555) 234-5678",
+      "service": "Annual V10 + Rabies VaccinationAppointment",
+      "when": "2026-09-08",
+      "hour": "09:00",
+      "id": "BaVvFuUXoBE"
+    },
+    {
+      "tutor": "Emily Johnson",
+      "pet": "Bella",
+      "phone": "+44 770 090 007 7",
+      "service": "Full Grooming & Haircut",
+      "when": "2026-09-08",
+      "hour": "10:30",
+      "id": "7ZhnGGOoEwc"
+    },
+    {
+      "tutor": "Sarah Davis",
+      "pet": "Luna",
+      "phone": "+1 (416) 555-0192",
+      "service": "Nail Trimming & Ear Cleaning",
+      "when": "2026-09-08",
+      "hour": "13:00",
+      "id": "gb0tr36P4dA"
+    },
+    {
+      "tutor": "Michael Brown",
+      "pet": "Charlie",
+      "phone": "+1 (212) 555-7890",
+      "service": "General Vet Consultation",
+      "when": "2026-09-08",
+      "hour": "15:30",
+      "id": "QlexPBcW9_k"
+    },
+    {
+      "tutor": "Jessica Wilson",
+      "pet": "Oliver",
+      "phone": "+44 207 946 095 8",
+      "service": "Flea and Tick Treatment",
+      "when": "2026-09-08",
+      "hour": "19:00",
+      "id": "DvynXgx7st8"
+    },
+    {
+      "tutor": "David Miller",
+      "pet": "Daisy",
+      "phone": "+351 912 345 678",
+      "service": "Bath & Deep Hydration",
+      "when": "2026-09-08",
+      "hour": "20:00",
+      "id": "LNaUKiDWOFA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
