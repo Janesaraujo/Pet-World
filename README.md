@@ -183,7 +183,11 @@ To see the original sample data, change the date at the top to **01/10/2024**.
 
 ### Mobile
 
-![Pet World mobile preview](src/assets/mobile-preview.png)
+<p align="center">
+  <img src="./src/assets/mobile-preview.png" width="300" alt="Pet World mobile preview">
+</p>
+
+
 
 
 ## 👤 Author
